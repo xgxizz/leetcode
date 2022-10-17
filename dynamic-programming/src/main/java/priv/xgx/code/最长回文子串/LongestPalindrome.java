@@ -2,6 +2,12 @@ package priv.xgx.code.最长回文子串;
 
 import java.util.Objects;
 
+/**
+ * @author xgx
+ * 思考：为什么循环体是从最后开始？
+ * 因为dp[i + 1][j - 1] == 1 这一步需要用到dp[i + 1][j - 1]。
+ * 如果i = 0开始，那么dp[i + 1][?]还没有计算
+ */
 public class LongestPalindrome {
     public static String longestPalindrome(String s) {
         //babad
@@ -20,6 +26,7 @@ public class LongestPalindrome {
 
         for (int i = length - 1; i >= 0; i--) {
             for (int j = i; j < length; j++) {
+                //长度为1或者2.对应下标内容一致，则是回文
                 if (chars[i] == chars[j]) {
                     //if (i == j || j - 1 == 1) {
                     //以下判断条件和上边注释的意思一致
@@ -45,23 +52,8 @@ public class LongestPalindrome {
         return s.substring(start, end + 1);
     }
 
-    public static void printDp(int[][] dp) {
-        for (int i = 0; i < dp.length; i++) {
-            for (int j = 0; j < dp.length; j++) {
-                System.out.print(dp[i][j] + "\t");
-            }
-            System.out.println();
-        }
-    }
-
     public static void main(String[] args) {
         String s = longestPalindrome("aacabdkacaa");
         System.out.println(s);
     }
-
-    /**
-     * 思考：为什么循环体是从最后开始？
-     * 因为dp[i + 1][j - 1] == 1 这一步需要用到dp[i + 1][j - 1]。
-     * 如果i = 0开始，那么dp[i + 1][?]还没有计算
-     */
 }
