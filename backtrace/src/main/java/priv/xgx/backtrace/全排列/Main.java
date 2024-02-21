@@ -1,7 +1,4 @@
-package priv.xgx.backtrace;
-
-import priv.xgx.backtrace.全排列.Solution01;
-import priv.xgx.backtrace.全排列.Solution02;
+package priv.xgx.backtrace.全排列;
 
 import java.util.List;
 
