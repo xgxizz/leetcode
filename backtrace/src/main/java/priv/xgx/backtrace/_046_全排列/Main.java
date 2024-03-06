@@ -1,4 +1,4 @@
-package priv.xgx.backtrace.全排列;
+package priv.xgx.backtrace._046_全排列;
 
 import java.util.List;
 
